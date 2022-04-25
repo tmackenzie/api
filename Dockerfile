@@ -13,11 +13,14 @@ RUN go build
 # Deploy
 ##
 FROM alpine
+
+RUN apk add --update curl
+
 RUN adduser -S -D -H -h /app appuser
 USER appuser
 COPY --from=builder /build/api /app/
 WORKDIR /app
 
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["./api"]
