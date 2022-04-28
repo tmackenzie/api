@@ -21,6 +21,6 @@ USER appuser
 COPY --from=builder /build/api /app/
 WORKDIR /app
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD ["./api"]

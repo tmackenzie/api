@@ -22,7 +22,7 @@ var albums = []album{
 }
 
 type heartbeatPayload struct {
-	Status string `json:"title"`
+	Status string `json:"status"`
 }
 
 var ok = heartbeatPayload{"OK"}
@@ -32,7 +32,7 @@ func main() {
 	router.GET("/albums", getAlbums)
 	router.GET("/heartbeat", heartbeat)
 
-	router.Run(":80")
+	router.Run(":3000")
 }
 
 // getAlbums responds with the list of all albums as JSON.
